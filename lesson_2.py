@@ -21,6 +21,7 @@ class Bus(Car):
 
 class Truck(Car):
     def drive_to(self, destination):
+        super().drive_to(destination)
         print(f"Truck {self.model} driving to {destination}")
 
     def test(self):
