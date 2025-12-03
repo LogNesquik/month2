@@ -1,6 +1,3 @@
-from pyclbr import Class
-
-
 class Person:
     def __init__(self, name, birth_date, occupation, higher_education):
         self.name = name
@@ -43,7 +40,7 @@ print("----------------------")
 people_objects = [
     Friend("Елена", "12.04.1997", "врачом", True, "танцы", "Насти"),
     Classmate("Петр", "03.09.2002", "студентом", False, "9Б", "Игоря"),
-    Person("Сергей", "18.07.1985", "учителем", True)
+    Person("Ева", "18.07.1985", "учителем", True)
 ]
 
 for person in people_objects:
