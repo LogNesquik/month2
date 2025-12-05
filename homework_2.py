@@ -1,6 +1,3 @@
-from pyclbr import Class
-
-
 class Person:
     def __init__(self, name, birth_date, occupation, higher_education):
         self.name = name
