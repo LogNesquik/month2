@@ -13,4 +13,4 @@ class Car:
         self.color = new_color
         print(f"Car {self.model} changed to {self.color}")
 
-    
+# отправлю полный код позже, когда выложат на гитхаб
