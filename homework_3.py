@@ -14,11 +14,15 @@ class Person:
         self.__higher_education = higher_education # приватный атрибут
     
     # Метод для получения значения приватного атрибута occupation(тут @property не использовал, т.к в задании нужно было реализовать геттеры)
-    def get_occupation(self):
+    @property
+    def occupation(self):
         return self.__occupation
     
+    
     # Метод для получения значения приватного атрибута higher_education(тут @property не использовал, т.к в задании нужно было реализовать геттеры)
-    def get_higher_education(self):
+    
+    @property
+    def higher_education(self):
         return self.__higher_education
 
     # Это тот же самый геттер, но с использованием декоратора 
@@ -38,35 +42,35 @@ class Person:
 
     # Метод introduce использует геттеры для доступа к приватным атрибутам
     def introduce(self):
-        edu_text = 'есть' if self.get_higher_education() else "нету"
+        edu_text = 'есть' if self.higher_education else "нету"
         print(f"Меня зовут {self.name}, я родился {self.birth_date}, "
-              f"по профессии {self.get_occupation()}, высшего образования {edu_text}.")
+              f"по профессии {self.occupation()}, высшего образования {edu_text}.")
 
 # Дочерние классы        
 class Classmate(Person):
     def __init__(self, name, birth_date, occupation, higher_education, group_name, friend_of): 
         super().__init__(name, birth_date, occupation, higher_education)
-        occupation = self.get_occupation() # получение значения приватного атрибута через геттер(т.е мы назначаем значение приватного атрибута в родительнском классе через геттеры)
-        higher_education = self.get_higher_education() # получение значения приватного атрибута через геттер(т.е мы назначаем значение приватного атрибута в родительнском классе через геттеры)
+        occupation = self.occupation # получение значения приватного атрибута через геттер(т.е мы назначаем значение приватного атрибута в родительнском классе через геттеры)
+        higher_education = self.higher_education # получение значения приватного атрибута через геттер(т.е мы назначаем значение приватного атрибута в родительнском классе через геттеры)
         self.group_name = group_name # публичный атрибут
         self.friend_of = friend_of # публичный атрибут
 
     # Метод introduce использует геттеры для доступа к приватным атрибутам    
     def introduce(self):
-        print(f"Привет, меня зовут {self.name}. Моя профессия {self.get_occupation()}. Я учился с {self.friend_of} в группе {self.group_name}. У меня {'есть' if self.get_higher_education() else 'нету'} высшее образование.")
+        print(f"Привет, меня зовут {self.name}. Моя профессия {self.occupation}. Я учился с {self.friend_of} в группе {self.group_name}. У меня {'есть' if self.higher_education else 'нету'} высшее образование.")
         
 # Дочерний класс
 class Friend(Person):
     def __init__(self, name, birth_date, occupation, higher_education, hobby, friend_of=None):
         super().__init__(name, birth_date, occupation, higher_education)
-        occupation = self.get_occupation() # получение значения приватного атрибута через геттер(т.е мы назначаем значение приватного атрибута в родительнском классе через геттеры)
-        higher_education = self.get_higher_education() # получение значения приватного атрибута через геттер(т.е мы назначаем значение приватного атрибута в родительнском классе через геттеры)
+        occupation = self.occupation # получение значения приватного атрибута через геттер(т.е мы назначаем значение приватного атрибута в родительнском классе через геттеры)
+        higher_education = self.higher_education # получение значения приватного атрибута через геттер(т.е мы назначаем значение приватного атрибута в родительнском классе через геттеры)
         self.hobby = hobby # публичный атрибут
         self.friend_of = friend_of # публичный атрибут
 
     # Метод introduce использует геттеры для доступа к приватным атрибутам
     def introduce(self):
-        print(f"Привет, меня зовут {self.name}. Моя профессия {self.get_occupation()}. Мое хобби {self.hobby}. У меня {'есть' if self.get_higher_education() else 'нету'} высшее образование.")
+        print(f"Привет, меня зовут {self.name}. Моя профессия {self.occupation}. Мое хобби {self.hobby}. У меня {'есть' if self.higher_education else 'нету'} высшее образование.")
 
 
 cl1 = Classmate("Иван", "20.02.1999", "студент", True, "11D", "Айсулуу")
