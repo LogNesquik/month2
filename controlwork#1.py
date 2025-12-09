@@ -2,14 +2,10 @@ class Animal:
     def __init__(self, name, age):
         self.__name = name
         self.__age = age
-    
+
     @property
     def name(self):
         return self.__name
-    
-    @name.setter
-    def name(self, new_name):
-        self.__name = new_name
     
     @property
     def age(self):
@@ -18,38 +14,39 @@ class Animal:
     @age.setter
     def age(self, new_age):
         self.__age = new_age
-    
-    def make_sound(self):
-        return "Животное издает звук"
 
+    @name.setter
+    def name(self, new_name):
+        self.__name = new_name
+
+
+    def make_sound(self):
+        pass
 
 class Dog(Animal):
     def make_sound(self):
-        return "гав гав гав!"
-
-
+        return "Woof!"
+    
 class Cat(Animal):
     def make_sound(self):
-        return "мяу мяу мяу!"
+        return "Meow!"
+    
+cat = Cat("Whiskers", 3)
+dog = Dog("Buddy", 5)
+
+print(f"{cat.name} says {cat.make_sound()}\n")
+print(f"{dog.name} says {dog.make_sound()}\n")
+
+cat.age = 4
+dog.age = 6
+cat.name = "Mittens"
+dog.name = "Max"
+
+print(f"{cat.name} is now {cat.age} years old.")
+print(f"{dog.name} is now {dog.age} years old.")
 
 
-# Создание и использование объектов
-dog = Dog("Шарик", 3)
-cat = Cat("Мурка", 2)
-
-# Использование геттеров (property)
-print(f"Имя собаки: {dog.name}, Возраст собаки: {dog.age}")
-print(f"Возраст кота: {cat.age}, Имя кота: {cat.name}")
-
-# Демонстрация полиморфизма
-animals = [dog, cat]
+animals = [cat, dog]
+print("\n=== Демонстрация полиморфизма ===")
 for animal in animals:
     print(f"{animal.name}: {animal.make_sound()}")
-
-# Использование сеттеров
-dog.name = "Бобик"
-cat.age = 4
-
-print(f"\nПосле изменений:")
-print(f"Собака: {dog.name} - {dog.make_sound()}")
-print(f"Кот: {cat.name} - {cat.make_sound()}")
