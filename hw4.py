@@ -25,17 +25,17 @@ class ContactList:
             id = cls.last_id
             contact = Contact(name, phone_number, id)
             cls.all_contacts.append(contact)
-            print(f"Contact {name} added successfully.")
+            print(f"Контакт {name} добавлен.")
         else:
-            print("Invalid phone number. It must be 10 digits long.")
-
+            raise ValueError("ОШИБОЧКА ВЫШЛА :))")
     @classmethod
     def remove_contact(cls, id):
         for contact in cls.all_contacts:
             if contact.id == id:
                 cls.all_contacts.remove(contact)
-                print(f"Contact with id {id} removed successfully.")
-            return f"Contact with id {id} removed successfully."
+                print(f"Контакт с ид {id} успешно удален.")
+            # raise ValueError("Такой ид не найден в базе...")
+            return "error"
 
 
 
