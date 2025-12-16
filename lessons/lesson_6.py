@@ -4,4 +4,4 @@ from lessons.lesson_1 import Car
 # Работает только при условии что файл внутри папки.
 
 car_honda = Car(color = 'blue', model = 'honda')
-
+print(car_honda.color, car_honda.model)
