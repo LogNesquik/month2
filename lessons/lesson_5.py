@@ -17,3 +17,5 @@ class Duck(Swimming, Flying):
 
 duck = Duck()
 duck.move()
+
+# Комит, для более красивого отображения изменений в гите.
