@@ -38,7 +38,7 @@ class ContactList:
 
 # пример использования
 print(ContactList.last_id) # 0
-
+# 
 ContactList.add_contact("Вася Пупкин", "0700100200")
 ContactList.add_contact("Виктор Цой", "0500123456")
 print(ContactList.last_id) # 2
