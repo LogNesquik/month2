@@ -31,3 +31,5 @@ truck_one = Truck('red', 'Mersedes')
 truck_one.drive_to('Bishkek')
 print(truck_one.color, truck_one.model)
 bus_42 = Bus('yellow', 'Ikarus', 42)
+
+# Комит, для более красивого отображения изменений в гите.
