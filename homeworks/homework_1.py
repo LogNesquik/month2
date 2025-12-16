@@ -1,4 +1,5 @@
 class Person:
+    # Инициализация публичных атрибутов
     def __init__(self, name, birth_date, occupation, higher_education):
         self.name = name
         self.birth_date = birth_date
