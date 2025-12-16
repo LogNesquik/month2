@@ -58,7 +58,7 @@ print(car_subaru._fined)
 # ошибка
 # print(car_subaru.__max_speed)
 # car_subaru.__test()
-
+# Ошибка, так как атрибут приватный
 # Лайфхак, но не стоит использовать
 # print(car_subaru._Car__max_speed)
 
