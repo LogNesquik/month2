@@ -21,3 +21,4 @@ class Tesla(ElectricCar, Car):
 tesla = Tesla()
 tesla.start()
 print(Tesla.mro())
+# Комит, для более красивого отображения изменений в гите.
