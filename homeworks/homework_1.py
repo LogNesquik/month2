@@ -14,11 +14,11 @@ class Person:
 friend_artyr = Person('Артур', '25.06.11', 'Беспилотник', False)
 friend_ratmir = Person('Ратмир', '14.02.11', 'Повар', False)
 friend_eva = Person('Ева', '08.08.11', 'Теннисистка', True)
+if __name__ == "__main__":
+    print(friend_artyr.name, friend_artyr.birth_date, friend_artyr.occupation, friend_artyr.higher_education)
+    print(friend_ratmir.name, friend_ratmir.birth_date, friend_ratmir.occupation, friend_ratmir.higher_education)
+    print(friend_eva.name, friend_eva.birth_date, friend_eva.occupation, friend_eva.higher_education)
 
-print(friend_artyr.name, friend_artyr.birth_date, friend_artyr.occupation, friend_artyr.higher_education)
-print(friend_ratmir.name, friend_ratmir.birth_date, friend_ratmir.occupation, friend_ratmir.higher_education)
-print(friend_eva.name, friend_eva.birth_date, friend_eva.occupation, friend_eva.higher_education)
-
-friend_artyr.introduce()
-friend_ratmir.introduce()
-friend_eva.introduce()
+    friend_artyr.introduce()
+    friend_ratmir.introduce()
+    friend_eva.introduce()
