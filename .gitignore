@@ -3,3 +3,7 @@
 
 __pycache__/
 test.txt
+
+*.db
+*.sqlite3
+*.sqlite
