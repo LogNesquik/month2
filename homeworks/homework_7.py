@@ -6,7 +6,7 @@ def create_table():
     """Создание таблицы books"""
     conn.execute("""
     CREATE TABLE IF NOT EXISTS books (
-        id INTEGER PRIMARY KEY,
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT,
         author TEXT,
         publication_year INTEGER,
@@ -30,6 +30,27 @@ def insert_books():
     conn.execute("INSERT INTO books VALUES (10, 'Алиса в Стране чудес', 'Льюис Кэрролл', 1865, 'Детская литература', 200, 6)")
     conn.commit()
 
+def delete_books(book_id):
+    conn.execute("DELETE FROM books WHERE id = ?", (book_id,))
+    conn.commit()
+
+def edit_books(book_id, name, author, publication_year, genre, number_of_pages, number_of_copies):
+    conn.execute("UPDATE books SET name = ?, author = ?, publication_year = ?, genre = ?, number_of_pages = ?, number_of_copies = ? WHERE id = ?",
+                 (name, author, publication_year, genre, number_of_pages, number_of_copies, book_id))
+    conn.commit()
+
+def get_all_books():
+    result = conn.execute("SELECT * FROM books")
+    return result.fetchall()
+
+
 if __name__ == '__main__':
     create_table()
     insert_books()
+    delete_books(5)
+    edit_books(3, 'Идиот', 'Федор Достоевский', 1869, 'Роман', 640, 3)
+
+    books = get_all_books()
+    print("Все книги в базе:")
+    for book in books:
+        print(book)
